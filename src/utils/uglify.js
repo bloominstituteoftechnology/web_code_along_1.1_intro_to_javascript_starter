@@ -109,6 +109,7 @@ const uglyDataGenerator = (arr) => {
       rngVal1 >= 3.5
     ) {
       item[prop] = "";
+      item.formatted = { color: 'red' };
     } else if (
       prop !== "profile" &&
       prop !== "id" &&
@@ -117,6 +118,7 @@ const uglyDataGenerator = (arr) => {
       rngVal1 >= 0
     ) {
       item[prop] = undefined;
+      item.formatted = { color: 'red' };
     }
 
     if (prop === "profile" && rngVal1 <= 4 && rngVal1 >= 3) {
@@ -162,6 +164,7 @@ const uglyDataGenerator = (arr) => {
 
         // will become empty string if hits default case- choosing to keep, adds more randomness to bad data
         item[prop][nestedProp] = newDate;
+        item.formatted = { color: 'red' };
       }
     } else if (prop === "profile" && rngVal1 < 3 && rngVal1 >= 1) {
       let nestedProp = getRandomProperty(item[prop]);
@@ -206,6 +209,7 @@ const uglyDataGenerator = (arr) => {
 
         // will become empty string if hits default case- choosing to keep, adds more randomness to bad data
         item[prop][nestedProp] = newDate;
+        item.formatted = { color: 'red' };
       }
     }
   });
